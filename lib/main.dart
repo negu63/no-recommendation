@@ -7,12 +7,21 @@ import 'core/theme/app_theme.dart';
 import 'modules/home/page.dart';
 
 void main() {
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: Routes.HOME,
-    theme: appThemeData,
-    defaultTransition: Transition.fade,
-    getPages: AppPages.pages,
-    home: HomePage(),
-  ));
+  runApp(const NoRecommendationApp());
+}
+
+class NoRecommendationApp extends StatelessWidget {
+  const NoRecommendationApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.HOME,
+      theme: appThemeData,
+      defaultTransition: Transition.fade,
+      getPages: AppPages.pages,
+      home: HomePage(),
+    );
+  }
 }
