@@ -9,8 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SearchInputController searchInputController =
-        Get.put(SearchInputController());
+    Get.put(SearchInputController());
 
     return Scaffold(
       body: Responsive(
