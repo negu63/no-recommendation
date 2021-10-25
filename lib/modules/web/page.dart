@@ -23,8 +23,11 @@ class WebPage extends StatelessWidget {
                     url: Uri.parse(url),
                   ),
                   onWebViewCreated: (controller) {
-                    debugPrint('create');
                     inAppWebViewController = controller;
+                  },
+                  onLoadStop: (controller, url) {
+                    injectCSS(controller, 'assets/css/remove_recommend.css');
+                    // injectCSS(controller, 'assets/css/remove_comment.css');
                   },
                 ),
               ),
@@ -36,4 +39,8 @@ class WebPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void injectCSS(InAppWebViewController controller, String path) {
+  controller.injectCSSFileFromAsset(assetFilePath: path);
 }
