@@ -1,0 +1,7 @@
+ytm-item-section-renderer[data-content-type=result] {
+    display: none;
+}
+
+ytm-item-section-renderer[data-content-type=result] ~ ytm-item-section-renderer[data-content-type=result] {
+    display: block;
+}
