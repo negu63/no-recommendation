@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class SearchInputController extends GetxController {
   RxString query = ''.obs;
@@ -9,6 +8,6 @@ class SearchInputController extends GetxController {
   }
 
   void search() {
-    launch('https://www.youtube.com/results?search_query=$query');
+    Get.toNamed('/web/$query');
   }
 }
