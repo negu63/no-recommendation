@@ -19,7 +19,7 @@ class WebPage extends StatelessWidget {
             Expanded(
               child: SafeArea(
                 child: WillPopScope(
-                  onWillPop: goBack,
+                  onWillPop: _goBack,
                   child: InAppWebView(
                     initialUrlRequest: URLRequest(
                       url: Uri.parse(url),
@@ -28,7 +28,7 @@ class WebPage extends StatelessWidget {
                       inAppWebViewController = controller;
                     },
                     onLoadStop: (controller, url) {
-                      injectCSS(controller, 'assets/css/remove_recommend.css');
+                      _injectCSS(controller, 'assets/css/remove_recommend.css');
                       // injectCSS(controller, 'assets/css/remove_comment.css');
                     },
                   ),
@@ -44,7 +44,7 @@ class WebPage extends StatelessWidget {
   }
 }
 
-Future<bool> goBack() async {
+Future<bool> _goBack() async {
   if (await inAppWebViewController.canGoBack()) {
     inAppWebViewController.goBack();
     return Future.value(false);
@@ -53,6 +53,6 @@ Future<bool> goBack() async {
   }
 }
 
-void injectCSS(InAppWebViewController controller, String path) {
+void _injectCSS(InAppWebViewController controller, String path) {
   controller.injectCSSFileFromAsset(assetFilePath: path);
 }
