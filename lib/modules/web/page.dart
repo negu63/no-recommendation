@@ -18,17 +18,20 @@ class WebPage extends StatelessWidget {
           children: [
             Expanded(
               child: SafeArea(
-                child: InAppWebView(
-                  initialUrlRequest: URLRequest(
-                    url: Uri.parse(url),
+                child: WillPopScope(
+                  onWillPop: goBack,
+                  child: InAppWebView(
+                    initialUrlRequest: URLRequest(
+                      url: Uri.parse(url),
+                    ),
+                    onWebViewCreated: (controller) {
+                      inAppWebViewController = controller;
+                    },
+                    onLoadStop: (controller, url) {
+                      injectCSS(controller, 'assets/css/remove_recommend.css');
+                      // injectCSS(controller, 'assets/css/remove_comment.css');
+                    },
                   ),
-                  onWebViewCreated: (controller) {
-                    inAppWebViewController = controller;
-                  },
-                  onLoadStop: (controller, url) {
-                    injectCSS(controller, 'assets/css/remove_recommend.css');
-                    // injectCSS(controller, 'assets/css/remove_comment.css');
-                  },
                 ),
               ),
             )
@@ -38,6 +41,15 @@ class WebPage extends StatelessWidget {
         desktop: Container(),
       ),
     );
+  }
+}
+
+Future<bool> goBack() async {
+  if (await inAppWebViewController.canGoBack()) {
+    inAppWebViewController.goBack();
+    return Future.value(false);
+  } else {
+    return Future.value(true);
   }
 }
 
