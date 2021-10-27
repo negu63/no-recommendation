@@ -8,7 +8,7 @@ class SearchInputController extends GetxController {
 
   @override
   void onInit() {
-    getQueries();
+    getHistories();
     super.onInit();
   }
 
@@ -21,7 +21,7 @@ class SearchInputController extends GetxController {
     Get.toNamed('/web/$query');
   }
 
-  Future getQueries() async {
+  Future getHistories() async {
     Box box;
     try {
       box = Hive.box('db');
