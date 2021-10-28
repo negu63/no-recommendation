@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class SearchInputController extends GetxController {
-  RxList histories = [].obs;
+  RxList queries = [].obs;
   RxString query = ''.obs;
 
   @override
   void onInit() {
-    getHistories();
+    getQueries();
     super.onInit();
   }
 
@@ -21,7 +21,7 @@ class SearchInputController extends GetxController {
     Get.toNamed('/web/$query');
   }
 
-  Future getHistories() async {
+  Future getQueries() async {
     Box box;
     try {
       box = Hive.box('db');
@@ -30,13 +30,13 @@ class SearchInputController extends GetxController {
       debugPrint(error.toString());
     }
 
-    var _histories = box.get('histories');
-    if (_histories != null) histories.value = _histories;
+    var _queries = box.get('queries');
+    if (_queries != null) queries.value = _queries;
   }
 
   void addQuery() async {
-    histories.add(query.value);
+    queries.add(query.value);
     Box box = await Hive.openBox('db');
-    box.put('histories', histories);
+    box.put('queries', queries);
   }
 }
