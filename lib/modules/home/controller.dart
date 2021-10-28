@@ -41,6 +41,12 @@ class SearchInputController extends GetxController {
     box.put('queries', queries);
   }
 
+  void removeAtQuery(int index) async {
+    queries.removeAt(index);
+    Box box = await Hive.openBox('db');
+    box.put('queries', queries);
+  }
+
   void focusIn() {
     isFocused.value = true;
   }
