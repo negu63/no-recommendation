@@ -17,17 +17,19 @@ class SearchHistory extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: searchInputController.queries.length,
             itemBuilder: (BuildContext context, int index) {
+              int reverseIndex =
+                  searchInputController.queries.length - 1 - index;
               return InkWell(
                 onTap: () {
-                  searchInputController.searchByHistory(index);
+                  searchInputController.searchByHistory(reverseIndex);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(searchInputController.queries[index]),
+                    Text(searchInputController.queries[reverseIndex]),
                     IconButton(
                       onPressed: () {
-                        searchInputController.removeAtQuery(index);
+                        searchInputController.removeAtQuery(reverseIndex);
                       },
                       icon: const Icon(Icons.clear),
                     ),
