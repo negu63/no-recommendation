@@ -25,6 +25,10 @@ class SearchInput extends StatelessWidget {
             onChanged: (String value) {
               searchInputController.changeQuery(value);
             },
+            onTap: () {
+              debugPrint('textfield');
+              searchInputController.focusIn();
+            },
           ),
         ),
       ],
