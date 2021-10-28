@@ -13,7 +13,7 @@ class SearchHistory extends StatelessWidget {
     return SizedBox(
       height: 200,
       child: ListView.builder(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemCount: searchInputController.queries.length,
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
@@ -21,9 +21,11 @@ class SearchHistory extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(searchInputController.queries[index]),
+                  Obx(() => Text(searchInputController.queries[index])),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      searchInputController.removeAtQuery(index);
+                    },
                     icon: Icon(Icons.clear),
                   ),
                 ],
