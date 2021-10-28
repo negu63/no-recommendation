@@ -12,30 +12,30 @@ class SearchHistory extends StatelessWidget {
     // return Text(searchInputController.queries.toString());
     return SizedBox(
       height: 200,
-      child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemCount: searchInputController.queries.length,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () {
-                searchInputController.query.value =
-                    searchInputController.queries[index];
-                searchInputController.search();
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Obx(() => Text(searchInputController.queries[index])),
-                  IconButton(
-                    onPressed: () {
-                      searchInputController.removeAtQuery(index);
-                    },
-                    icon: Icon(Icons.clear),
-                  ),
-                ],
-              ),
-            );
-          }),
+      child: Obx(
+        () => ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: searchInputController.queries.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {
+                  searchInputController.searchByHistory(index);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(searchInputController.queries[index]),
+                    IconButton(
+                      onPressed: () {
+                        searchInputController.removeAtQuery(index);
+                      },
+                      icon: const Icon(Icons.clear),
+                    ),
+                  ],
+                ),
+              );
+            }),
+      ),
     );
   }
 }
