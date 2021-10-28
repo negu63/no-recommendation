@@ -4,7 +4,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class SearchInputController extends GetxController {
   RxList queries = [].obs;
-  RxString query = ''.obs;
   RxBool isFocused = false.obs;
 
   @override
@@ -13,12 +12,8 @@ class SearchInputController extends GetxController {
     super.onInit();
   }
 
-  void changeQuery(String value) {
-    query.value = value;
-  }
-
-  void search() async {
-    addQuery();
+  void search(String query) async {
+    addQuery(query);
     Get.toNamed('/web/$query');
   }
 
@@ -35,8 +30,8 @@ class SearchInputController extends GetxController {
     if (_queries != null) queries.value = _queries;
   }
 
-  void addQuery() async {
-    queries.add(query.value);
+  void addQuery(String query) async {
+    queries.add(query);
     Box box = await Hive.openBox('db');
     box.put('queries', queries);
   }

@@ -7,6 +7,7 @@ class SearchInput extends StatelessWidget {
   const SearchInput({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final TextEditingController textEditingController = TextEditingController();
     final SearchInputController searchInputController = Get.find();
 
     return Row(
@@ -16,15 +17,15 @@ class SearchInput extends StatelessWidget {
         SizedBox(
           width: context.width * (2 / 3),
           child: TextField(
+            controller: textEditingController,
             decoration: InputDecoration(
               suffixIcon: IconButton(
-                onPressed: searchInputController.search,
+                onPressed: () {
+                  searchInputController.search(textEditingController.text);
+                },
                 icon: const Icon(Icons.search),
               ),
             ),
-            onChanged: (String value) {
-              searchInputController.changeQuery(value);
-            },
             onTap: () {
               debugPrint('textfield');
               searchInputController.focusIn();
