@@ -13,11 +13,13 @@ class SearchInputController extends GetxController {
   }
 
   void search(String query) async {
+    focusOut();
     addQuery(query);
     Get.toNamed('/web/$query');
   }
 
   void searchByHistory(int index) async {
+    focusOut();
     String query = queries[index];
     addQuery(query);
     removeAtQuery(index);

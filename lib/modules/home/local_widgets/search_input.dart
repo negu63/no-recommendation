@@ -21,7 +21,6 @@ class SearchInput extends StatelessWidget {
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 onPressed: () {
-                  searchInputController.focusOut();
                   searchInputController.search(textEditingController.text);
                 },
                 icon: const Icon(Icons.search),
