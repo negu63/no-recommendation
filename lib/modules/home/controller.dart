@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 class SearchInputController extends GetxController {
   RxList queries = [].obs;
   RxString query = ''.obs;
+  RxBool isFocused = false.obs;
 
   @override
   void onInit() {
@@ -38,5 +39,13 @@ class SearchInputController extends GetxController {
     queries.add(query.value);
     Box box = await Hive.openBox('db');
     box.put('queries', queries);
+  }
+
+  void focusIn() {
+    isFocused.value = true;
+  }
+
+  void focusOut() {
+    isFocused.value = false;
   }
 }
