@@ -17,7 +17,11 @@ class SearchHistory extends StatelessWidget {
           itemCount: searchInputController.queries.length,
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
-              onTap: () {},
+              onTap: () {
+                searchInputController.query.value =
+                    searchInputController.queries[index];
+                searchInputController.search();
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
