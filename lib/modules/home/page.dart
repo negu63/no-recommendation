@@ -12,11 +12,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     final SearchInputController searchInputController =
         Get.put(SearchInputController());
     final WebViewController webViewController = Get.put(WebViewController());
 
     return Scaffold(
+      key: _scaffoldKey,
       drawer: MenuDrawer(),
       body: Responsive(
         mobile: GestureDetector(
@@ -25,14 +27,30 @@ class HomePage extends StatelessWidget {
             searchInputController.focusOut();
             FocusScope.of(context).unfocus();
           },
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: [
-              SearchInput(),
-              Obx(
-                () => searchInputController.isFocused.value == true
-                    ? SearchHistory()
-                    : Container(),
+              Positioned(
+                top: 30,
+                left: 15,
+                child: IconButton(
+                  icon: Icon(Icons.menu),
+                  iconSize: 30,
+                  color: Colors.blue,
+                  onPressed: () {
+                    _scaffoldKey.currentState!.openDrawer();
+                  },
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SearchInput(),
+                  Obx(
+                    () => searchInputController.isFocused.value == true
+                        ? SearchHistory()
+                        : Container(),
+                  ),
+                ],
               ),
             ],
           ),
