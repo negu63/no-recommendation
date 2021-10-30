@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/core/utils/responsive.dart';
 import 'package:norecommendation/global_widgets/menu_drawer.dart';
+import 'package:norecommendation/global_widgets/text_title.dart';
 import 'package:norecommendation/modules/home/controller.dart';
 import 'package:norecommendation/modules/home/local_widgets/search_history.dart';
 import 'package:norecommendation/modules/home/local_widgets/search_input.dart';
@@ -44,6 +45,7 @@ class HomePage extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  TextTitle(),
                   SearchInput(),
                   Obx(
                     () => searchInputController.isFocused.value == true
