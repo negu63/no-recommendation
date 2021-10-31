@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:norecommendation/core/utils/responsive.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/data/model/model.dart';
-import 'package:norecommendation/modules/home/controller.dart';
 import 'package:norecommendation/modules/web/controller.dart';
 
 late InAppWebViewController inAppWebViewController;
@@ -65,8 +64,6 @@ Future<bool> _goBack() async {
     inAppWebViewController.goBack();
     return Future.value(false);
   } else {
-    final SearchInputController searchInputController = Get.find();
-    searchInputController.focusIn();
     return Future.value(true);
   }
 }
