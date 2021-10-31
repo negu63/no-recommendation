@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:norecommendation/core/utils/box_manager.dart';
+import 'package:norecommendation/modules/setting/controller.dart';
 
 import 'routes/routes.dart';
 import 'routes/pages.dart';
@@ -8,7 +10,7 @@ import 'core/theme/app_theme.dart';
 import 'modules/home/page.dart';
 
 void main() async {
-  await Hive.initFlutter();
+  await Hive.initFlutter().then((value) => initSetting());
   runApp(const NoRecommendationApp());
 }
 
@@ -17,6 +19,8 @@ class NoRecommendationApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SettingController());
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.HOME,
@@ -25,5 +29,13 @@ class NoRecommendationApp extends StatelessWidget {
       getPages: AppPages.pages,
       home: HomePage(),
     );
+  }
+}
+
+void initSetting() async {
+  debugPrint((await Hive.boxExists('setting')).toString());
+  if (!(await Hive.boxExists('setting'))) {
+    saveToHive('setting', 'query', true);
+    saveToHive('setting', 'history', true);
   }
 }
