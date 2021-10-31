@@ -15,12 +15,6 @@ class SearchInputController extends GetxController {
     Get.toNamed('/web/$query');
   }
 
-  void searchByHistory(int index) async {
-    String query = queries[index];
-    addQuery(query);
-    Get.toNamed('/web/$query');
-  }
-
   Future getQueries() async {
     var _queries = await loadFromHive('db', 'queries');
     if (_queries != null) queries.value = _queries;
