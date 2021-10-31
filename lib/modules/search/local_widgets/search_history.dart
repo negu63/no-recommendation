@@ -18,7 +18,8 @@ class SearchHistory extends StatelessWidget {
             int reverseIndex = searchInputController.queries.length - 1 - index;
             return InkWell(
               onTap: () {
-                searchInputController.searchByHistory(reverseIndex);
+                searchInputController
+                    .search(searchInputController.queries[reverseIndex]);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
