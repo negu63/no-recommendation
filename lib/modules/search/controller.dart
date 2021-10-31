@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:norecommendation/core/utils/box_manager.dart';
 
 class SearchInputController extends GetxController {
   RxList queries = [].obs;
@@ -24,15 +23,7 @@ class SearchInputController extends GetxController {
   }
 
   Future getQueries() async {
-    Box box;
-    try {
-      box = Hive.box('db');
-    } catch (error) {
-      box = await Hive.openBox('db');
-      debugPrint(error.toString());
-    }
-
-    var _queries = box.get('queries');
+    var _queries = loadFromHive('db', 'queries');
     if (_queries != null) queries.value = _queries;
   }
 
@@ -44,14 +35,12 @@ class SearchInputController extends GetxController {
     }
     queries.add(query);
 
-    Box box = await Hive.openBox('db');
-    box.put('queries', queries);
+    saveToHive('db', 'queries', queries);
   }
 
   void removeAtQuery(int index) async {
     queries.removeAt(index);
 
-    Box box = await Hive.openBox('db');
-    box.put('queries', queries);
+    saveToHive('db', 'queries', queries);
   }
 }
