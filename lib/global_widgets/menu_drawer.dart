@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -9,7 +10,9 @@ class MenuDrawer extends StatelessWidget {
       child: ListView(
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed('/setting');
+            },
             child: Text("설정"),
           ),
           InkWell(
