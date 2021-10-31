@@ -37,13 +37,20 @@ class SearchInputController extends GetxController {
   }
 
   void addQuery(String query) async {
+    int index = queries.indexOf(query);
+
+    if (index != -1) {
+      queries.removeAt(index);
+    }
     queries.add(query);
+
     Box box = await Hive.openBox('db');
     box.put('queries', queries);
   }
 
   void removeAtQuery(int index) async {
     queries.removeAt(index);
+
     Box box = await Hive.openBox('db');
     box.put('queries', queries);
   }
