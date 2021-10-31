@@ -9,6 +9,10 @@ class AppPages {
   static final pages = [
     GetPage(name: Routes.HOME, page: () => HomePage()),
     GetPage(name: Routes.WEB, page: () => WebPage()),
-    GetPage(name: Routes.SEARCH, page: () => SearchPage()),
+    GetPage(
+      name: Routes.SEARCH,
+      page: () => SearchPage(),
+      transition: Transition.noTransition,
+    ),
   ];
 }
