@@ -12,7 +12,7 @@ class SettingController extends GetxController {
   }
 
   void loadSetting() async {
-    savingQuery = await loadFromHive('setting', 'query');
-    savingHistory = await loadFromHive('setting', 'history');
+    savingQuery.value = await loadFromHive('setting', 'query');
+    savingHistory.value = await loadFromHive('setting', 'history');
   }
 }
