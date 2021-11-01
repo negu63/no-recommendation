@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/modules/search/controller.dart';
+import 'package:norecommendation/modules/setting/controller.dart';
 
 class SearchHistory extends StatelessWidget {
   const SearchHistory({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class SearchHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SearchInputController searchInputController = Get.find();
+    final SettingController settingController = Get.find();
 
     return Obx(
       () => ListView.builder(
@@ -18,8 +20,10 @@ class SearchHistory extends StatelessWidget {
             int reverseIndex = searchInputController.queries.length - 1 - index;
             return InkWell(
               onTap: () {
-                searchInputController
-                    .search(searchInputController.queries[reverseIndex]);
+                searchInputController.search(
+                  searchInputController.queries[reverseIndex],
+                  settingController.savingQuery.value,
+                );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
