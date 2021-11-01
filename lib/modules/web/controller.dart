@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:norecommendation/core/utils/box_manager.dart';
 import 'package:norecommendation/data/model/model.dart';
 
 class WebViewController extends GetxController {
@@ -18,21 +19,13 @@ class WebViewController extends GetxController {
   }
 
   Future getHistories() async {
-    Box box;
-    try {
-      box = Hive.box('db');
-    } catch (error) {
-      box = await Hive.openBox('db');
-      debugPrint(error.toString());
-    }
-
-    var _histories = box.get('histories');
+    var _histories = loadFromHive('db', 'histories');
     if (_histories != null) histories.value = _histories;
   }
 
   void addHistory(History history) async {
     histories.add(history);
-    Box box = await Hive.openBox('db');
-    box.put('histories', histories);
+
+    saveToHive('db', 'histories', histories);
   }
 }
