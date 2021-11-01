@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 import 'package:norecommendation/data/model/model.dart';
 
@@ -7,6 +9,11 @@ class HistoryController extends GetxController {
 
   @override
   void onInit() {
+    try {
+      Hive.registerAdapter(HistoryAdapter());
+    } catch (error) {
+      debugPrint(error.toString());
+    }
     getHistories();
     super.onInit();
   }
