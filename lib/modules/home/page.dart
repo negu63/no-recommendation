@@ -32,6 +32,18 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
+            Positioned(
+              top: 30,
+              right: 15,
+              child: IconButton(
+                icon: Icon(Icons.history),
+                iconSize: 30,
+                color: Colors.blue,
+                onPressed: () {
+                  Get.toNamed('/history');
+                },
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
