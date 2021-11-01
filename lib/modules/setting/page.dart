@@ -28,6 +28,12 @@ class SettingPage extends StatelessWidget {
             state: settingController.savingQuery,
           ),
           Divider(),
+          ToggleButton(
+            icon: Icons.history,
+            title: '시청 기록',
+            name: 'history',
+            state: settingController.savingHistory,
+          ),
         ],
       ),
     );
