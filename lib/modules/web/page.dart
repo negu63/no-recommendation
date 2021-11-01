@@ -16,7 +16,7 @@ class WebPage extends StatelessWidget {
     final url =
         'https://youtube.com/results?search_query=${Get.parameters['query']}';
 
-    final HistoryController webViewController = Get.find();
+    final HistoryController historyController = Get.find();
     final SettingController settingController = Get.find();
 
     return Scaffold(
@@ -43,7 +43,7 @@ class WebPage extends StatelessWidget {
                         Uri? uri = await controller.getUrl();
                         if (uri != null && uri.path == '/watch') {
                           DateTime now = DateTime.now();
-                          webViewController.addHistory(History(
+                          historyController.addHistory(History(
                               title!,
                               uri.toString(),
                               '${now.year}${now.month}${now.day}'));
