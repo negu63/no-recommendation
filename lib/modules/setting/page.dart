@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 import 'package:norecommendation/modules/setting/local_widgets/setting_appbar.dart';
 import 'package:norecommendation/modules/setting/local_widgets/setting_subtitle.dart';
@@ -13,8 +14,13 @@ class SettingPage extends StatelessWidget {
     final SettingController settingController = Get.find();
 
     return Scaffold(
-      appBar: SettingAppBar(
+      appBar: SimpleAppbar(
         appbar: AppBar(),
+        title: 'History',
+        iconColor: Colors.black,
+        foreColor: Colors.black,
+        backgroundColor: Theme.of(context).canvasColor,
+        shadowColor: Colors.transparent,
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
