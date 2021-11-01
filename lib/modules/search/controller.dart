@@ -10,8 +10,8 @@ class SearchInputController extends GetxController {
     super.onInit();
   }
 
-  void search(String query) async {
-    addQuery(query);
+  void search(String query, bool saving) async {
+    saving == true ? addQuery(query) : null;
     Get.toNamed('/web/$query');
   }
 
