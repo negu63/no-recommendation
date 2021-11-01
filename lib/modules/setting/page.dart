@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
-import 'package:norecommendation/modules/setting/local_widgets/setting_appbar.dart';
 import 'package:norecommendation/modules/setting/local_widgets/setting_subtitle.dart';
 import 'package:norecommendation/modules/setting/local_widgets/toggle_button.dart';
 
@@ -16,7 +15,7 @@ class SettingPage extends StatelessWidget {
     return Scaffold(
       appBar: SimpleAppbar(
         appbar: AppBar(),
-        title: 'History',
+        title: 'Setting',
         iconColor: Colors.black,
         foreColor: Colors.black,
         backgroundColor: Theme.of(context).canvasColor,
