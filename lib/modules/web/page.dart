@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:norecommendation/core/utils/responsive.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/data/model/model.dart';
+import 'package:norecommendation/modules/history/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
-import 'package:norecommendation/modules/web/controller.dart';
 
 late InAppWebViewController inAppWebViewController;
 
@@ -16,7 +16,7 @@ class WebPage extends StatelessWidget {
     final url =
         'https://youtube.com/results?search_query=${Get.parameters['query']}';
 
-    final WebViewController webViewController = Get.find();
+    final HistoryController webViewController = Get.find();
     final SettingController settingController = Get.find();
 
     return Scaffold(
