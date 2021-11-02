@@ -24,6 +24,12 @@ class HistoryController extends GetxController {
   }
 
   void addHistory(History history) async {
+    int index = histories
+        .indexWhere((element) => (element as History).url == history.url);
+    debugPrint(index.toString());
+    if (index != -1) {
+      histories.removeAt(index);
+    }
     histories.add(history);
 
     saveToHive('db', 'histories', histories);
