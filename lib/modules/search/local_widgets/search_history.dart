@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/utils/space_replacer.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
@@ -21,14 +22,16 @@ class SearchHistory extends StatelessWidget {
             return InkWell(
               onTap: () {
                 searchInputController.search(
-                  searchInputController.queries[reverseIndex],
+                  replaceStringSpace(
+                      searchInputController.queries[reverseIndex]),
                   settingController.savingQuery.value,
                 );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(searchInputController.queries[reverseIndex]),
+                  Text(replaceURLSpace(
+                      searchInputController.queries[reverseIndex])),
                   IconButton(
                     onPressed: () {
                       searchInputController.removeAtQuery(reverseIndex);

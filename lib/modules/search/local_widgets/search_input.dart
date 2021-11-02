@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/utils/space_replacer.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
@@ -23,7 +24,8 @@ class SearchInput extends StatelessWidget {
               icon: const Icon(Icons.arrow_back)),
           suffixIcon: IconButton(
             onPressed: () {
-              searchInputController.search(textEditingController.text,
+              searchInputController.search(
+                  replaceStringSpace(textEditingController.text),
                   settingController.savingQuery.value);
             },
             icon: const Icon(Icons.search),
@@ -31,7 +33,7 @@ class SearchInput extends StatelessWidget {
         ),
         onSubmitted: (value) {
           searchInputController.search(
-              value, settingController.savingQuery.value);
+              replaceStringSpace(value), settingController.savingQuery.value);
         },
       ),
     );
