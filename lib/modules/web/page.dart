@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:metadata_fetch/metadata_fetch.dart';
 import 'package:norecommendation/core/utils/responsive.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/data/model/model.dart';
@@ -43,10 +44,15 @@ class WebPage extends StatelessWidget {
                         Uri? uri = await controller.getUrl();
                         if (uri != null && uri.path == '/watch') {
                           DateTime now = DateTime.now();
+                          var data =
+                              await MetadataFetch.extract(uri.toString());
+                          debugPrint('#########' + data.toString());
                           historyController.addHistory(History(
-                              title!,
-                              uri.toString(),
-                              '${now.year}${now.month}${now.day}'));
+                            data!.title!,
+                            data.url!,
+                            data.image!,
+                            '${now.year}${now.month}${now.day}',
+                          ));
                         }
                       }
                     },
