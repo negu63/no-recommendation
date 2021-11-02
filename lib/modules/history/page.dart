@@ -32,7 +32,6 @@ class HistoryPage extends StatelessWidget {
               onTap: () {},
               child: WatchHistory(
                 history: history,
-                index: reverseIndex,
               ),
             );
           },
