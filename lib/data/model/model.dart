@@ -11,7 +11,10 @@ class History extends HiveObject {
   String url;
 
   @HiveField(2)
+  String image;
+
+  @HiveField(3)
   String date;
 
-  History(this.title, this.url, this.date);
+  History(this.title, this.url, this.image, this.date);
 }
