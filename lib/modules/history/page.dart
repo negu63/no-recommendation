@@ -30,7 +30,10 @@ class HistoryPage extends StatelessWidget {
             History history = historyController.histories[reverseIndex];
             return InkWell(
               onTap: () {},
-              child: WatchHistory(history: history),
+              child: WatchHistory(
+                history: history,
+                index: reverseIndex,
+              ),
             );
           },
         ),
