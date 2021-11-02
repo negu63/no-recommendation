@@ -23,6 +23,7 @@ class HistoryPage extends StatelessWidget {
       ),
       body: Obx(
         () => ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemCount: historyController.histories.length,
           itemBuilder: (BuildContext context, int index) {
             int reverseIndex = historyController.histories.length - 1 - index;
