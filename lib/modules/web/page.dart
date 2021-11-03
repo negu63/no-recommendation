@@ -10,12 +10,15 @@ import 'package:norecommendation/modules/setting/controller.dart';
 late InAppWebViewController inAppWebViewController;
 
 class WebPage extends StatelessWidget {
-  const WebPage({Key? key}) : super(key: key);
+  const WebPage({Key? key, required this.isSearch}) : super(key: key);
+
+  final bool isSearch;
 
   @override
   Widget build(BuildContext context) {
-    final url =
-        'https://youtube.com/results?search_query=${Get.parameters['query']}';
+    final url = isSearch
+        ? 'https://youtube.com/results?search_query=${Get.parameters['query']}'
+        : 'https://www.youtube.com/watch?v=${Get.parameters['videoId']}';
 
     final HistoryController historyController = Get.find();
     final SettingController settingController = Get.find();
