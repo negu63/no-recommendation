@@ -18,6 +18,12 @@ class HistoryController extends GetxController {
     super.onInit();
   }
 
+  void view(History history) {
+    addHistory(history);
+    Get.toNamed(
+        '/web/watch/${history.url.substring(history.url.indexOf('=') + 1)}');
+  }
+
   Future getHistories() async {
     var _histories = await loadFromHive('db', 'histories');
     if (_histories != null) histories.value = _histories;
