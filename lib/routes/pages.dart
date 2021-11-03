@@ -10,7 +10,18 @@ import 'routes.dart';
 class AppPages {
   static final pages = [
     GetPage(name: Routes.HOME, page: () => HomePage()),
-    GetPage(name: Routes.WEB, page: () => WebPage()),
+    GetPage(
+      name: Routes.WEB_SEARCH,
+      page: () => WebPage(
+        isSearch: true,
+      ),
+    ),
+    GetPage(
+      name: Routes.WEB_WATCH,
+      page: () => WebPage(
+        isSearch: false,
+      ),
+    ),
     GetPage(
       name: Routes.SEARCH,
       page: () => SearchPage(),
