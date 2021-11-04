@@ -12,8 +12,7 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HistoryController historyController = Get.find();
-    String date =
-        '${DateTime.now().year}${DateTime.now().month}${DateTime.now().day}';
+    String date = '';
 
     return Scaffold(
       appBar: SimpleAppbar(
