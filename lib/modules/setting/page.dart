@@ -25,7 +25,7 @@ class SettingPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         children: [
-          SettingSubtitle(),
+          SettingSubtitle(title: '기록'),
           ToggleButton(
             icon: Icons.search,
             title: '검색 기록',
