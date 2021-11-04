@@ -30,9 +30,7 @@ class HistoryController extends GetxController {
   }
 
   void addHistory(History history) async {
-    int index = histories
-        .indexWhere((element) => (element as History).url == history.url);
-    debugPrint(index.toString());
+    int index = findHistoryIndex(history);
     if (index != -1) {
       histories.removeAt(index);
     }
@@ -41,9 +39,17 @@ class HistoryController extends GetxController {
     saveToHive('db', 'histories', histories);
   }
 
-  void removeAtHistory(int index) async {
-    histories.removeAt(index);
+  void removeAtHistory(History history) async {
+    int index = findHistoryIndex(history);
+    if (index != -1) {
+      histories.removeAt(index);
+    }
 
     saveToHive('db', 'histories', histories);
+  }
+
+  int findHistoryIndex(History history) {
+    return histories
+        .indexWhere((element) => (element as History).url == history.url);
   }
 }
