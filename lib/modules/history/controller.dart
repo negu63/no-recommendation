@@ -29,6 +29,11 @@ class HistoryController extends GetxController {
     if (_histories != null) histories.value = _histories;
   }
 
+  int findHistoryIndex(History history) {
+    return histories
+        .indexWhere((element) => (element as History).url == history.url);
+  }
+
   void addHistory(History history) async {
     int index = findHistoryIndex(history);
     if (index != -1) {
@@ -48,8 +53,9 @@ class HistoryController extends GetxController {
     saveToHive('db', 'histories', histories);
   }
 
-  int findHistoryIndex(History history) {
-    return histories
-        .indexWhere((element) => (element as History).url == history.url);
+  void clearHistory() {
+    histories.clear();
+
+    saveToHive('db', 'histories', histories);
   }
 }
