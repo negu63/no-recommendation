@@ -53,6 +53,15 @@ class SettingPage extends StatelessWidget {
             },
           ),
           Divider(),
+          FunctionButton(
+            icon: Icons.history_toggle_off,
+            title: '시청 기록 전체 삭제',
+            label: '삭제',
+            onPressed: () {
+              final HistoryController historyController = Get.find();
+              historyController.clearHistory();
+            },
+          ),
         ],
       ),
     );
