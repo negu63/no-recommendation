@@ -5,6 +5,7 @@ import 'package:norecommendation/global_widgets/menu_drawer.dart';
 import 'package:norecommendation/global_widgets/text_title.dart';
 import 'package:norecommendation/modules/history/controller.dart';
 import 'package:norecommendation/modules/home/local_widgets/search_input.dart';
+import 'package:norecommendation/modules/search/controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    Get.put(SearchInputController());
     Get.put(HistoryController());
 
     return Scaffold(
