@@ -40,7 +40,9 @@ class WebPage extends StatelessWidget {
                     },
                     onLoadStop: (controller, url) {
                       _injectCSS(controller, 'assets/css/remove_recommend.css');
-                      // injectCSS(controller, 'assets/css/remove_comment.css');
+                      if (!settingController.showingComment.value) {
+                        _injectCSS(controller, 'assets/css/remove_comment.css');
+                      }
                     },
                     onTitleChanged: (controller, title) async {
                       if (settingController.savingHistory.value) {
