@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
+import 'package:norecommendation/modules/history/controller.dart';
+import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
+import 'package:norecommendation/modules/setting/local_widgets/function_button.dart';
 import 'package:norecommendation/modules/setting/local_widgets/setting_subtitle.dart';
 import 'package:norecommendation/modules/setting/local_widgets/toggle_button.dart';
 
@@ -39,6 +42,17 @@ class SettingPage extends StatelessWidget {
             name: 'history',
             state: settingController.savingHistory,
           ),
+          SettingSubtitle(title: '삭제'),
+          FunctionButton(
+            icon: Icons.search_off,
+            title: '검색 기록 전체 삭제',
+            label: '삭제',
+            onPressed: () {
+              final SearchInputController searchInputController = Get.find();
+              searchInputController.clearQuery();
+            },
+          ),
+          Divider(),
         ],
       ),
     );
