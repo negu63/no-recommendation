@@ -36,4 +36,10 @@ class SearchInputController extends GetxController {
 
     saveToHive('db', 'queries', queries);
   }
+
+  void clearQuery() async {
+    queries.clear();
+
+    saveToHive('db', 'queries', queries);
+  }
 }
