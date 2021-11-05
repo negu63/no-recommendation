@@ -4,6 +4,7 @@ import 'package:norecommendation/core/utils/box_manager.dart';
 class SettingController extends GetxController {
   RxBool savingQuery = true.obs;
   RxBool savingHistory = true.obs;
+  RxBool showingComment = true.obs;
 
   @override
   void onInit() async {
@@ -14,5 +15,6 @@ class SettingController extends GetxController {
   void loadSetting() async {
     savingQuery.value = await loadFromHive('setting', 'query');
     savingHistory.value = await loadFromHive('setting', 'history');
+    showingComment.value = await loadFromHive('setting', 'comment');
   }
 }
