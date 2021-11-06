@@ -24,11 +24,11 @@ class HomePage extends StatelessWidget {
           children: [
             Positioned(
               top: 30,
-              left: 15,
+              left: 4,
               child: IconButton(
-                icon: Icon(Icons.menu),
+                icon: const Icon(Icons.menu),
                 iconSize: 30,
-                color: Colors.blue,
+                color: const Color.fromRGBO(36, 36, 36, 1),
                 onPressed: () {
                   _scaffoldKey.currentState!.openDrawer();
                 },
@@ -36,11 +36,11 @@ class HomePage extends StatelessWidget {
             ),
             Positioned(
               top: 30,
-              right: 15,
+              right: 4,
               child: IconButton(
-                icon: Icon(Icons.history),
+                icon: const Icon(Icons.history),
                 iconSize: 30,
-                color: Colors.blue,
+                color: const Color.fromRGBO(36, 36, 36, 1),
                 onPressed: () {
                   Get.toNamed('/history');
                 },
