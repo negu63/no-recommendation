@@ -10,6 +10,14 @@ class MenuDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
+          Container(
+            color: Color.fromRGBO(36, 36, 36, 1),
+            child: DrawerHeader(
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+              ),
+            ),
+          ),
           Menu(
             title: '설정',
             icon: Icons.settings,
