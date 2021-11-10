@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         mobile: Stack(
           children: [
             Positioned(
-              top: 30,
+              top: 0,
               left: 4,
               child: IconButton(
                 icon: const Icon(Icons.menu),
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 30,
+              top: 0,
               right: 4,
               child: IconButton(
                 icon: const Icon(Icons.history),
@@ -53,10 +53,16 @@ class HomePage extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Spotlight(),
             ),
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 300),
+                child: TextTitle(),
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextTitle(),
                 SearchInput(),
               ],
             ),
