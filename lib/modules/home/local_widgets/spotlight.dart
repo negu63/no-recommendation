@@ -8,9 +8,13 @@ class Spotlight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: CustomPaint(
-        size: Size(Get.width, Get.height),
-        painter: DrawTriangle(),
+      child: Stack(
+        children: [
+          CustomPaint(
+            size: Size(Get.width, Get.height),
+            painter: DrawTriangle(),
+          ),
+        ],
       ),
     );
   }
@@ -21,15 +25,16 @@ class DrawTriangle extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var path = Path();
     path.moveTo(size.width / 2, 0);
-    path.lineTo(40, size.height / 1.85);
+    path.lineTo(40, size.height / 1.9);
     path.cubicTo(
-        size.width / 4,
-        size.height / 1.5,
-        size.width - (size.width / 4),
-        size.height / 1.5,
+        size.width / 5,
+        size.height / 1.55,
+        size.width - (size.width / 5),
+        size.height / 1.55,
         size.width - 40,
-        size.height / 1.85);
-    canvas.drawPath(path, Paint()..color = Colors.white);
+        size.height / 1.9);
+
+    canvas.drawPath(path, Paint()..color = Color.fromRGBO(255, 255, 255, 1));
   }
 
   @override
