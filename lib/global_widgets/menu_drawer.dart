@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/global_widgets/menu.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -11,12 +12,20 @@ class MenuDrawer extends StatelessWidget {
       child: ListView(
         children: [
           Container(
-            color: Color.fromRGBO(36, 36, 36, 1),
-            child: DrawerHeader(
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
+            color: colorBackground,
+            child: const DrawerHeader(
+              child: Text(
+                'Spotlight',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
+          ),
+          Menu(
+            title: '정보',
+            icon: Icons.info,
+            onTap: () {},
           ),
           Menu(
             title: '설정',
@@ -24,11 +33,6 @@ class MenuDrawer extends StatelessWidget {
             onTap: () {
               Get.toNamed('/setting');
             },
-          ),
-          Menu(
-            title: '정보',
-            icon: Icons.info,
-            onTap: () {},
           ),
         ],
       ),
