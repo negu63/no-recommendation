@@ -1,4 +1,4 @@
 import 'dart:ui';
 
 const colorCard = Color(0xffEDEDEE);
-const colorBackground = Color.fromRGBO(18, 18, 18, 1);
+const darkGrey18 = Color.fromRGBO(18, 18, 18, 1);
