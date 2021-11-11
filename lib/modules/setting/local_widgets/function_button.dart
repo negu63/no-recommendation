@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FunctionButton extends StatelessWidget {
   const FunctionButton({
@@ -25,7 +26,17 @@ class FunctionButton extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextButton(
-              onPressed: onPressed,
+              onPressed: () {
+                onPressed();
+                Get.showSnackbar(
+                  GetBar(
+                    title: '삭제 완료',
+                    message: '삭제되었습니다.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+              },
               child: Text(label),
             ),
           ),
