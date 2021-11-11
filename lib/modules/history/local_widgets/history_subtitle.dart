@@ -7,14 +7,19 @@ class HistorySubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 16, 8, 8),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.subtitle1!.copyWith(
-              color: Theme.of(context).primaryColor,
-            ),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 0, 8),
+          child: Text(
+            '${title.substring(0, 4)}년 ${title.substring(4, 6)}월 ${title.substring(6, 8)}일',
+            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  color: Colors.black,
+                ),
+          ),
+        ),
+      ],
     );
   }
 }
