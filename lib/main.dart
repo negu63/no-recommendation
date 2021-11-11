@@ -27,7 +27,9 @@ class NoRecommendationApp extends StatelessWidget {
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
-      home: const HomePage(),
+      home: const SafeArea(
+        child: HomePage(),
+      ),
     );
   }
 }
