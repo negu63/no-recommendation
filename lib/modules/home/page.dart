@@ -21,10 +21,24 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorBackground,
       key: _scaffoldKey,
-      drawer: MenuDrawer(),
+      drawer: const MenuDrawer(),
       body: Responsive(
         mobile: Stack(
           children: [
+            const Align(
+              alignment: Alignment.topCenter,
+              child: Spotlight(),
+            ),
+            const Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 300),
+                child: TextTitle(),
+              ),
+            ),
+            const Center(
+              child: SearchInput(),
+            ),
             Positioned(
               top: 0,
               left: 4,
@@ -48,23 +62,6 @@ class HomePage extends StatelessWidget {
                   Get.toNamed('/history');
                 },
               ),
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Spotlight(),
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 300),
-                child: TextTitle(),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SearchInput(),
-              ],
             ),
           ],
         ),
