@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
@@ -18,8 +19,8 @@ class SettingPage extends StatelessWidget {
       appBar: SimpleAppbar(
         appbar: AppBar(),
         title: 'Setting',
-        iconColor: Colors.black,
-        foreColor: Colors.black,
+        iconColor: darkGrey18,
+        foreColor: darkGrey18,
         backgroundColor: Theme.of(context).canvasColor,
         shadowColor: Colors.transparent,
       ),

@@ -12,7 +12,7 @@ class MenuDrawer extends StatelessWidget {
       child: ListView(
         children: [
           Container(
-            color: colorBackground,
+            color: darkGrey18,
             child: const DrawerHeader(
               child: Text(
                 'Spotlight',

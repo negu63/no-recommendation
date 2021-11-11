@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     Get.put(SearchInputController());
 
     return Scaffold(
-      backgroundColor: colorBackground,
+      backgroundColor: darkGrey18,
       key: _scaffoldKey,
       drawer: const MenuDrawer(),
       body: Responsive(
