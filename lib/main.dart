@@ -10,7 +10,7 @@ import 'core/theme/app_theme.dart';
 import 'modules/home/page.dart';
 
 void main() async {
-  await Hive.initFlutter().then((value) => initSetting());
+  await Hive.initFlutter().then((value) => _initSetting());
   runApp(const NoRecommendationApp());
 }
 
@@ -34,7 +34,7 @@ class NoRecommendationApp extends StatelessWidget {
   }
 }
 
-void initSetting() async {
+void _initSetting() async {
   debugPrint((await Hive.boxExists('setting')).toString());
   if (!(await Hive.boxExists('setting'))) {
     saveToHive('setting', 'query', true);
