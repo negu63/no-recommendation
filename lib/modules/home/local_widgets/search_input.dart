@@ -17,10 +17,18 @@ class SearchInput extends StatelessWidget {
           child: SizedBox(
             width: context.width * (2 / 3),
             child: const TextField(
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.search),
-              ),
               enabled: false,
+              decoration: InputDecoration(
+                suffixIcon: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+                disabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
