@@ -34,9 +34,11 @@ class SearchInput extends StatelessWidget {
               )),
           suffixIcon: IconButton(
             onPressed: () {
-              searchInputController.search(
-                  replaceStringSpace(textEditingController.text),
-                  settingController.savingQuery.value);
+              if (textEditingController.text.isNotEmpty) {
+                searchInputController.search(
+                    replaceStringSpace(textEditingController.text),
+                    settingController.savingQuery.value);
+              }
             },
             icon: const Icon(
               Icons.search,
@@ -49,8 +51,10 @@ class SearchInput extends StatelessWidget {
           disabledBorder: border,
         ),
         onSubmitted: (value) {
-          searchInputController.search(
-              replaceStringSpace(value), settingController.savingQuery.value);
+          if (value.isNotEmpty) {
+            searchInputController.search(
+                replaceStringSpace(value), settingController.savingQuery.value);
+          }
         },
       ),
     );
