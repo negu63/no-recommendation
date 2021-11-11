@@ -36,7 +36,6 @@ void initSetting() async {
   debugPrint((await Hive.boxExists('setting')).toString());
   if (!(await Hive.boxExists('setting'))) {
     saveToHive('setting', 'query', true);
-    saveToHive('setting', 'history', true);
     saveToHive('setting', 'comment', false);
   }
 }
