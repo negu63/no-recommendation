@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
-import 'package:norecommendation/modules/history/controller.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 import 'package:norecommendation/modules/setting/local_widgets/function_button.dart';
@@ -43,12 +42,6 @@ class SettingPage extends StatelessWidget {
             state: settingController.savingQuery,
           ),
           Divider(),
-          ToggleButton(
-            icon: Icons.history,
-            title: '시청 기록',
-            name: 'history',
-            state: settingController.savingHistory,
-          ),
           SettingSubtitle(title: '삭제'),
           FunctionButton(
             icon: Icons.search_off,
@@ -57,16 +50,6 @@ class SettingPage extends StatelessWidget {
             onPressed: () {
               final SearchInputController searchInputController = Get.find();
               searchInputController.clearQuery();
-            },
-          ),
-          Divider(),
-          FunctionButton(
-            icon: Icons.history_toggle_off,
-            title: '시청 기록 전체 삭제',
-            label: '삭제',
-            onPressed: () {
-              final HistoryController historyController = Get.find();
-              historyController.clearHistory();
             },
           ),
         ],

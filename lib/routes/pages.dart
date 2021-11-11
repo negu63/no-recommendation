@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:norecommendation/modules/history/page.dart';
 import 'package:norecommendation/modules/home/page.dart';
 import 'package:norecommendation/modules/search/page.dart';
 import 'package:norecommendation/modules/setting/page.dart';
@@ -30,10 +29,6 @@ class AppPages {
     GetPage(
       name: Routes.SETTING,
       page: () => SettingPage(),
-    ),
-    GetPage(
-      name: Routes.HISTORY,
-      page: () => HistoryPage(),
     ),
   ];
 }
