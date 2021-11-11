@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 
 class SettingSubtitle extends StatelessWidget {
   const SettingSubtitle({Key? key, required this.title}) : super(key: key);
@@ -13,7 +14,7 @@ class SettingSubtitle extends StatelessWidget {
         title,
         style: Theme.of(context).textTheme.subtitle1!.copyWith(
               fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
+              color: darkGrey18,
             ),
       ),
     );
