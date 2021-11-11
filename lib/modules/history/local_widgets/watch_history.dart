@@ -13,7 +13,7 @@ class WatchHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 108,
-      margin: const EdgeInsets.all(4),
+      margin: const EdgeInsets.fromLTRB(10, 4, 10, 4),
       child: Row(
         children: [
           SizedBox(
