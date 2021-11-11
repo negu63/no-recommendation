@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 
 class FunctionButton extends StatelessWidget {
   const FunctionButton({
@@ -37,7 +38,16 @@ class FunctionButton extends StatelessWidget {
                   ),
                 );
               },
-              child: Text(label),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: darkGrey18,
+                primary: Colors.white,
+              ),
             ),
           ),
         ],
