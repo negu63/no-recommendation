@@ -18,6 +18,11 @@ class FunctionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkButtonStyle = TextButton.styleFrom(
+      backgroundColor: darkGrey18,
+      primary: Colors.white,
+    );
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -29,12 +34,42 @@ class FunctionButton extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 onPressed();
-                Get.showSnackbar(
-                  GetBar(
-                    title: '삭제 완료',
-                    message: '삭제되었습니다.',
-                    snackPosition: SnackPosition.BOTTOM,
-                    duration: const Duration(seconds: 2),
+                Get.defaultDialog(
+                  title: '경고',
+                  radius: 4,
+                  content: const Text(
+                    '모두 삭제 됩니다.\n삭제하시겠습니까?',
+                  ),
+                  confirm: TextButton(
+                    onPressed: () {
+                      Get.back();
+                      if (!Get.isSnackbarOpen!) {
+                        Get.showSnackbar(
+                          GetBar(
+                            title: '삭제 완료',
+                            message: '삭제되었습니다.',
+                            snackPosition: SnackPosition.BOTTOM,
+                            duration: const Duration(seconds: 2),
+                          ),
+                        );
+                      }
+                    },
+                    style: darkButtonStyle,
+                    child: const Text('삭제'),
+                  ),
+                  cancel: TextButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: const Text(
+                      '취소',
+                      style: TextStyle(
+                        color: darkGrey18,
+                      ),
+                    ),
+                    style: TextButton.styleFrom(
+                      primary: darkGrey18,
+                    ),
                   ),
                 );
               },
@@ -44,10 +79,7 @@ class FunctionButton extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              style: TextButton.styleFrom(
-                backgroundColor: darkGrey18,
-                primary: Colors.white,
-              ),
+              style: darkButtonStyle,
             ),
           ),
         ],
