@@ -9,7 +9,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SearchAppBar(appbar: AppBar()),
-      body: SearchHistory(),
+      body: const SearchHistory(),
     );
   }
 }

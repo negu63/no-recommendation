@@ -28,22 +28,22 @@ class SettingPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         children: [
-          SettingSubtitle(title: '화면'),
+          const SettingSubtitle(title: '화면'),
           ToggleButton(
             icon: Icons.comment,
             title: '댓글 창',
             name: 'comment',
             state: settingController.showingComment,
           ),
-          SettingSubtitle(title: '기록'),
+          const SettingSubtitle(title: '기록'),
           ToggleButton(
             icon: Icons.search,
             title: '검색 기록',
             name: 'query',
             state: settingController.savingQuery,
           ),
-          Divider(),
-          SettingSubtitle(title: '삭제'),
+          const Divider(),
+          const SettingSubtitle(title: '삭제'),
           FunctionButton(
             icon: Icons.search_off,
             title: '검색 기록 전체 삭제',

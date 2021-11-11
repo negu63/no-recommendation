@@ -23,11 +23,11 @@ class NoRecommendationApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.home,
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

@@ -8,27 +8,30 @@ import 'routes.dart';
 
 class AppPages {
   static final pages = [
-    GetPage(name: Routes.HOME, page: () => HomePage()),
     GetPage(
-      name: Routes.WEB_SEARCH,
-      page: () => WebPage(
+      name: Routes.home,
+      page: () => const HomePage(),
+    ),
+    GetPage(
+      name: Routes.webSearch,
+      page: () => const WebPage(
         isSearch: true,
       ),
     ),
     GetPage(
-      name: Routes.WEB_WATCH,
-      page: () => WebPage(
+      name: Routes.webWatch,
+      page: () => const WebPage(
         isSearch: false,
       ),
     ),
     GetPage(
-      name: Routes.SEARCH,
-      page: () => SearchPage(),
+      name: Routes.search,
+      page: () => const SearchPage(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: Routes.SETTING,
-      page: () => SettingPage(),
+      name: Routes.setting,
+      page: () => const SettingPage(),
     ),
   ];
 }
