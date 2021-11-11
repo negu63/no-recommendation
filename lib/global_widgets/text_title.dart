@@ -6,8 +6,8 @@ class TextTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "NoThankYou",
-      // style: Theme.of(context).textTheme.headline3,
+      "Spotlight",
+      style: Theme.of(context).textTheme.headline5,
     );
   }
 }
