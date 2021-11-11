@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 
 class ToggleButton extends StatelessWidget {
@@ -42,6 +43,7 @@ class ToggleButton extends StatelessWidget {
                     ),
                   );
                 },
+                activeColor: darkGrey18,
               ),
             ),
           ),
