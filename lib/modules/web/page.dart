@@ -56,7 +56,7 @@ class WebPage extends StatelessWidget {
                             data!.title!,
                             data.url!,
                             data.image!,
-                            '${now.year}${now.month}${now.day}',
+                            '${now.year}${now.month.toString().length == 1 ? '0' : ''}${now.month}${now.day.toString().length == 1 ? '0' : ''}${now.day}',
                           ));
                         }
                       }
