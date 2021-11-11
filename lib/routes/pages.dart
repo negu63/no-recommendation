@@ -27,7 +27,6 @@ class AppPages {
     GetPage(
       name: Routes.search,
       page: () => const SearchPage(),
-      transition: Transition.noTransition,
     ),
     GetPage(
       name: Routes.setting,
