@@ -34,14 +34,16 @@ class ToggleButton extends StatelessWidget {
                 onChanged: (value) {
                   state.value = value;
                   saveToHive('setting', name, value);
-                  Get.showSnackbar(
-                    GetBar(
-                      title: '설정 완료',
-                      message: '설정이 저장되었습니다.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                    ),
-                  );
+                  if (!Get.isSnackbarOpen!) {
+                    Get.showSnackbar(
+                      GetBar(
+                        title: '설정 완료',
+                        message: '설정이 저장되었습니다.',
+                        snackPosition: SnackPosition.BOTTOM,
+                        duration: const Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 },
                 activeColor: darkGrey18,
               ),
