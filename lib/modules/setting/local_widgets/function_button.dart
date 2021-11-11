@@ -18,11 +18,6 @@ class FunctionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final darkButtonStyle = TextButton.styleFrom(
-      backgroundColor: darkGrey18,
-      primary: Colors.white,
-    );
-
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -54,8 +49,16 @@ class FunctionButton extends StatelessWidget {
                         );
                       }
                     },
-                    style: darkButtonStyle,
-                    child: const Text('삭제'),
+                    style: TextButton.styleFrom(
+                      primary: darkGrey18,
+                    ),
+                    child: const Text(
+                      '삭제',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                   cancel: TextButton(
                     onPressed: () {
@@ -65,6 +68,7 @@ class FunctionButton extends StatelessWidget {
                       '취소',
                       style: TextStyle(
                         color: darkGrey18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     style: TextButton.styleFrom(
@@ -79,7 +83,10 @@ class FunctionButton extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              style: darkButtonStyle,
+              style: TextButton.styleFrom(
+                backgroundColor: darkGrey18,
+                primary: Colors.white,
+              ),
             ),
           ),
         ],
