@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 
 class Menu extends StatelessWidget {
   const Menu({
@@ -16,7 +17,10 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon),
+      leading: Icon(
+        icon,
+        color: colorBackground,
+      ),
       title: Text(title),
     );
   }
