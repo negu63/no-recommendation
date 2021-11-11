@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 
 class ToggleButton extends StatelessWidget {
-  const ToggleButton(
-      {Key? key,
-      required this.icon,
-      required this.title,
-      required this.name,
-      required this.state})
-      : super(key: key);
+  const ToggleButton({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.name,
+    required this.state,
+  }) : super(key: key);
 
   final IconData icon;
   final String title;
@@ -33,6 +33,14 @@ class ToggleButton extends StatelessWidget {
                 onChanged: (value) {
                   state.value = value;
                   saveToHive('setting', name, value);
+                  Get.showSnackbar(
+                    GetBar(
+                      title: '설정 완료',
+                      message: '설정이 저장되었습니다.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                    ),
+                  );
                 },
               ),
             ),
