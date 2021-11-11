@@ -38,6 +38,7 @@ class SearchInput extends StatelessWidget {
                 searchInputController.search(
                     replaceStringSpace(textEditingController.text),
                     settingController.savingQuery.value);
+                textEditingController.text = '';
               }
             },
             icon: const Icon(
@@ -54,6 +55,7 @@ class SearchInput extends StatelessWidget {
           if (value.isNotEmpty) {
             searchInputController.search(
                 replaceStringSpace(value), settingController.savingQuery.value);
+            textEditingController.text = '';
           }
         },
       ),
