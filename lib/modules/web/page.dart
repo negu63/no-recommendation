@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:norecommendation/core/utils/responsive.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
@@ -20,34 +19,30 @@ class WebPage extends StatelessWidget {
     final SettingController settingController = Get.find();
 
     return Scaffold(
-      body: Responsive(
-        mobile: Column(
-          children: [
-            Expanded(
-              child: SafeArea(
-                child: WillPopScope(
-                  onWillPop: _goBack,
-                  child: InAppWebView(
-                    initialUrlRequest: URLRequest(
-                      url: Uri.parse(url),
-                    ),
-                    onWebViewCreated: (controller) {
-                      inAppWebViewController = controller;
-                    },
-                    onLoadStop: (controller, url) {
-                      _injectCSS(controller, 'assets/css/remove_recommend.css');
-                      if (!settingController.showingComment.value) {
-                        _injectCSS(controller, 'assets/css/remove_comment.css');
-                      }
-                    },
+      body: Column(
+        children: [
+          Expanded(
+            child: SafeArea(
+              child: WillPopScope(
+                onWillPop: _goBack,
+                child: InAppWebView(
+                  initialUrlRequest: URLRequest(
+                    url: Uri.parse(url),
                   ),
+                  onWebViewCreated: (controller) {
+                    inAppWebViewController = controller;
+                  },
+                  onLoadStop: (controller, url) {
+                    _injectCSS(controller, 'assets/css/remove_recommend.css');
+                    if (!settingController.showingComment.value) {
+                      _injectCSS(controller, 'assets/css/remove_comment.css');
+                    }
+                  },
                 ),
               ),
-            )
-          ],
-        ),
-        tablet: Container(),
-        desktop: Container(),
+            ),
+          )
+        ],
       ),
     );
   }
