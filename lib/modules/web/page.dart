@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
 late InAppWebViewController inAppWebViewController;
@@ -12,11 +13,11 @@ class WebPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final url = isSearch
-        ? 'https://youtube.com/results?search_query=${Get.parameters['query']}'
-        : 'https://www.youtube.com/watch?v=${Get.parameters['videoId']}';
-
     final SettingController settingController = Get.find();
+    final SearchInputController searchInputController = Get.find();
+    final url = isSearch
+        ? 'https://youtube.com/results?search_query=${searchInputController.query}'
+        : 'https://www.youtube.com/watch?v=${Get.parameters['videoId']}';
 
     return Scaffold(
       body: Column(

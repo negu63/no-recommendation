@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 
 class SearchInputController extends GetxController {
+  RxString query = ''.obs;
   RxList queries = [].obs;
 
   @override
@@ -12,7 +13,7 @@ class SearchInputController extends GetxController {
 
   void search(String query, bool saving) async {
     saving == true ? addQuery(query) : null;
-    Get.toNamed('/web/search/$query');
+    Get.toNamed('/web/search');
   }
 
   Future getQueries() async {

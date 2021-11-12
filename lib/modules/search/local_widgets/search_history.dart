@@ -22,6 +22,8 @@ class SearchHistory extends StatelessWidget {
             int reverseIndex = searchInputController.queries.length - 1 - index;
             return ListTile(
               onTap: () {
+                searchInputController.query.value =
+                    searchInputController.queries[reverseIndex];
                 searchInputController.search(
                   replaceStringSpace(
                     searchInputController.queries[reverseIndex],

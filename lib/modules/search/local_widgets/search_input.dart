@@ -35,6 +35,7 @@ class SearchInput extends StatelessWidget {
           suffixIcon: IconButton(
             onPressed: () {
               if (textEditingController.text.isNotEmpty) {
+                searchInputController.query.value = textEditingController.text;
                 searchInputController.search(
                     replaceStringSpace(textEditingController.text),
                     settingController.savingQuery.value);
@@ -53,6 +54,8 @@ class SearchInput extends StatelessWidget {
         ),
         onSubmitted: (value) {
           if (value.isNotEmpty) {
+            searchInputController.query.value = value;
+            debugPrint(searchInputController.query.value);
             searchInputController.search(
                 replaceStringSpace(value), settingController.savingQuery.value);
             textEditingController.text = '';
