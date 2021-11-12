@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:norecommendation/core/theme/color_theme.dart';
-import 'package:norecommendation/global_widgets/menu_drawer.dart';
 import 'package:norecommendation/global_widgets/text_title.dart';
 import 'package:norecommendation/modules/home/local_widgets/search_input.dart';
 import 'package:norecommendation/modules/home/local_widgets/spotlight.dart';
@@ -12,13 +11,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     Get.put(SearchInputController());
 
     return Scaffold(
       backgroundColor: darkGrey18,
-      key: _scaffoldKey,
-      drawer: const MenuDrawer(),
       body: Stack(
         children: [
           const Align(
@@ -39,11 +35,21 @@ class HomePage extends StatelessWidget {
             top: 0,
             left: 4,
             child: IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(Icons.info),
+              iconSize: 30,
+              color: Colors.white,
+              onPressed: () {},
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 4,
+            child: IconButton(
+              icon: const Icon(Icons.settings),
               iconSize: 30,
               color: Colors.white,
               onPressed: () {
-                _scaffoldKey.currentState!.openDrawer();
+                Get.toNamed('/setting');
               },
             ),
           ),
