@@ -6,4 +6,5 @@ class Routes {
   static const search = '/search';
   static const setting = '/setting';
   static const history = '/history';
+  static const oss = '/oss';
 }
