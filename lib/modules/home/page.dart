@@ -38,7 +38,9 @@ class HomePage extends StatelessWidget {
               icon: const Icon(Icons.info_outline),
               iconSize: 30,
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/oss');
+              },
             ),
           ),
           Positioned(
