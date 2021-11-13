@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             top: 0,
             left: 4,
             child: IconButton(
-              icon: const Icon(Icons.info),
+              icon: const Icon(Icons.info_outline),
               iconSize: 30,
               color: Colors.white,
               onPressed: () {},
