@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
+import 'package:norecommendation/core/values/languages/translation.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
 import 'routes/routes.dart';
@@ -22,6 +23,9 @@ class NoRecommendationApp extends StatelessWidget {
     Get.put(SettingController());
 
     return GetMaterialApp(
+      translations: Messages(),
+      locale: Get.deviceLocale,
+      fallbackLocale: const Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.home,
       theme: appThemeData,
