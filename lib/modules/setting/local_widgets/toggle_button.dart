@@ -37,8 +37,8 @@ class ToggleButton extends StatelessWidget {
                   if (!Get.isSnackbarOpen!) {
                     Get.showSnackbar(
                       GetBar(
-                        title: '설정 완료',
-                        message: '설정이 저장되었습니다.',
+                        title: 'snackbarToggleTitle'.tr,
+                        message: 'snackbarToggleMessage'.tr,
                         snackPosition: SnackPosition.BOTTOM,
                         duration: const Duration(seconds: 2),
                       ),

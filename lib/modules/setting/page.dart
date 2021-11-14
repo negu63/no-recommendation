@@ -18,7 +18,7 @@ class SettingPage extends StatelessWidget {
     return Scaffold(
       appBar: SimpleAppbar(
         appbar: AppBar(),
-        title: 'Setting',
+        title: 'settingTitle'.tr,
         iconColor: darkGrey18,
         foreColor: darkGrey18,
         backgroundColor: Theme.of(context).canvasColor,
@@ -28,26 +28,28 @@ class SettingPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         children: [
-          const SettingSubtitle(title: '화면'),
+          SettingSubtitle(
+            title: 'settingSubtitleDisplay'.tr,
+          ),
           ToggleButton(
             icon: Icons.comment,
-            title: '댓글 창',
+            title: 'settingCommentBox'.tr,
             name: 'comment',
             state: settingController.showingComment,
           ),
-          const SettingSubtitle(title: '기록'),
+          SettingSubtitle(title: 'settingSubtitleHistory'.tr),
           ToggleButton(
             icon: Icons.search,
-            title: '검색 기록',
+            title: 'settingQueryHistory'.tr,
             name: 'query',
             state: settingController.savingQuery,
           ),
           const Divider(),
-          const SettingSubtitle(title: '삭제'),
+          SettingSubtitle(title: 'settingSubtitleDelete'.tr),
           FunctionButton(
             icon: Icons.search_off,
-            title: '검색 기록 전체 삭제',
-            label: '삭제',
+            title: 'settingQueryClear'.tr,
+            label: 'settingButtonClear'.tr,
             onPressed: () {
               final SearchInputController searchInputController = Get.find();
               searchInputController.clearQuery();

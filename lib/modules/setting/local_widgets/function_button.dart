@@ -30,10 +30,14 @@ class FunctionButton extends StatelessWidget {
               onPressed: () {
                 onPressed();
                 Get.defaultDialog(
-                  title: '경고',
+                  title: 'buttonClearTitle'.tr,
                   radius: 4,
-                  content: const Text(
-                    '모두 삭제 됩니다.\n삭제하시겠습니까?',
+                  content: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'buttonClearMessage'.tr,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   confirm: TextButton(
                     onPressed: () {
@@ -41,8 +45,8 @@ class FunctionButton extends StatelessWidget {
                       if (!Get.isSnackbarOpen!) {
                         Get.showSnackbar(
                           GetBar(
-                            title: '삭제 완료',
-                            message: '삭제되었습니다.',
+                            title: 'snackbarClearTitle'.tr,
+                            message: 'snackbarClearMessage'.tr,
                             snackPosition: SnackPosition.BOTTOM,
                             duration: const Duration(seconds: 2),
                           ),
@@ -52,9 +56,9 @@ class FunctionButton extends StatelessWidget {
                     style: TextButton.styleFrom(
                       primary: darkGrey18,
                     ),
-                    child: const Text(
-                      '삭제',
-                      style: TextStyle(
+                    child: Text(
+                      'buttonClearConfirm'.tr,
+                      style: const TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
                       ),
@@ -64,9 +68,9 @@ class FunctionButton extends StatelessWidget {
                     onPressed: () {
                       Get.back();
                     },
-                    child: const Text(
-                      '취소',
-                      style: TextStyle(
+                    child: Text(
+                      'buttonClearCancel'.tr,
+                      style: const TextStyle(
                         color: darkGrey18,
                         fontWeight: FontWeight.bold,
                       ),
