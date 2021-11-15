@@ -15,8 +15,7 @@ class Messages extends Translations {
           'snackbarToggleTitle': 'Setting Completed',
           'snackbarToggleMessage': 'has been saved.',
           'buttonClearTitle': 'Warning',
-          'buttonClearMessage':
-              'Are you sure you want to Delete all search history?',
+          'buttonClearMessage': 'Are you sure you want to delete?',
           'buttonClearConfirm': 'Delete',
           'buttonClearCancel': 'Cacel',
           'snackbarClearTitle': 'Delete Completed',
@@ -34,7 +33,7 @@ class Messages extends Translations {
           'snackbarToggleTitle': '설정 완료',
           'snackbarToggleMessage': '저장되었습니다.',
           'buttonClearTitle': '경고',
-          'buttonClearMessage': '모든 검색 기록을 삭제하시겠습니까?',
+          'buttonClearMessage': '삭제하시겠습니까?',
           'buttonClearConfirm': '삭제',
           'buttonClearCancel': '취소',
           'snackbarClearTitle': '삭제 완료',
