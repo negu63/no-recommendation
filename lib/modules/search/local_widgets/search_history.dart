@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/core/utils/space_replacer.dart';
 import 'package:norecommendation/modules/search/controller.dart';
+import 'package:norecommendation/modules/search/local_widgets/remove_button.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
 
 class SearchHistory extends StatelessWidget {
@@ -44,14 +45,10 @@ class SearchHistory extends StatelessWidget {
                         maxLines: null,
                       ),
                     ),
-                    IconButton(
+                    RemoveButton(
                       onPressed: () {
                         searchInputController.removeAtQuery(reverseIndex);
                       },
-                      icon: const Icon(
-                        Icons.clear,
-                        color: darkGrey18,
-                      ),
                     ),
                   ],
                 ),
