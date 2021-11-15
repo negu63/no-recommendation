@@ -28,7 +28,6 @@ class FunctionButton extends StatelessWidget {
             flex: 1,
             child: TextButton(
               onPressed: () {
-                onPressed();
                 Get.defaultDialog(
                   title: 'buttonClearTitle'.tr,
                   radius: 4,
@@ -41,6 +40,7 @@ class FunctionButton extends StatelessWidget {
                   ),
                   confirm: TextButton(
                     onPressed: () {
+                      onPressed();
                       Get.back();
                       if (!Get.isSnackbarOpen!) {
                         Get.showSnackbar(
