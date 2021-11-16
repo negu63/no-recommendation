@@ -4,6 +4,7 @@ class Messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_US': {
+          'appTitle': 'Blinker',
           'settingTitle': 'Setting',
           'settingSubtitleDisplay': 'Display',
           'settingSubtitleHistory': 'History',
@@ -22,6 +23,7 @@ class Messages extends Translations {
           'snackbarClearMessage': 'Has been deleted.',
         },
         'ko_KR': {
+          'appTitle': '블링커',
           'settingTitle': '설정',
           'settingSubtitleDisplay': '화면',
           'settingSubtitleHistory': '기록',
