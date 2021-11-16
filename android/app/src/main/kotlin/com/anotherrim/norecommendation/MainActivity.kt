@@ -1,4 +1,4 @@
-package com.anotherrim.norecommendation
+package com.anotherrim.spotlight
 
 import io.flutter.embedding.android.FlutterActivity
 
