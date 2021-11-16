@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anotherrim.spotlight">
+    package="com.anotherrim.limelight">
    <application
-        android:label="spotlight"
+        android:label="라임라이트"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity

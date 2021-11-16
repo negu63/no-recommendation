@@ -1,4 +1,4 @@
-package com.anotherrim.spotlight
+package com.anotherrim.limelight
 
 import io.flutter.embedding.android.FlutterActivity
 
