@@ -20,7 +20,7 @@ class OssPage extends StatelessWidget {
             ),
       ),
       child: LicensePage(
-        applicationName: 'limelight',
+        applicationName: 'Blinker',
         applicationVersion: '1.0.0',
         applicationIcon: Card(
           shape: RoundedRectangleBorder(
@@ -30,8 +30,8 @@ class OssPage extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: SvgPicture.asset(
-              'assets/images/limelight_icon_1024.svg',
-              semanticsLabel: 'limelight logo',
+              'assets/images/blinker_icon_1024.svg',
+              semanticsLabel: 'blinker logo',
               clipBehavior: Clip.antiAlias,
               width: 64,
               height: 64,
