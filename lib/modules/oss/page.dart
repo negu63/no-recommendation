@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:norecommendation/core/theme/color_theme.dart';
 
 class OssPage extends StatelessWidget {
@@ -18,11 +19,24 @@ class OssPage extends StatelessWidget {
               secondary: darkGrey18,
             ),
       ),
-      child: const LicensePage(
-        applicationName: 'Spotlight',
+      child: LicensePage(
+        applicationName: 'limelight',
         applicationVersion: '1.0.0',
-        applicationIcon: Icon(
-          Icons.light,
+        applicationIcon: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          margin: const EdgeInsets.all(8),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: SvgPicture.asset(
+              'assets/images/limelight_icon_1024.svg',
+              semanticsLabel: 'limelight logo',
+              clipBehavior: Clip.antiAlias,
+              width: 64,
+              height: 64,
+            ),
+          ),
         ),
         applicationLegalese: 'Copyright 2021 negu63 <negu6633@gmail.com>',
       ),
