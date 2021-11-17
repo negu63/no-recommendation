@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:norecommendation/core/theme/color_theme.dart';
+import 'package:get/get.dart';
 
 class OssPage extends StatelessWidget {
   const OssPage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class OssPage extends StatelessWidget {
             ),
       ),
       child: LicensePage(
-        applicationName: 'Blinker',
+        applicationName: 'appTitle'.tr,
         applicationVersion: '1.0.0',
         applicationIcon: Card(
           shape: RoundedRectangleBorder(
