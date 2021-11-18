@@ -13,9 +13,9 @@ class RemoveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const Icon(
+      icon: Icon(
         Icons.clear,
-        color: darkGrey46,
+        color: Theme.of(context).textTheme.bodyText1!.color!,
       ),
       onPressed: () {
         Get.defaultDialog(
@@ -61,13 +61,13 @@ class RemoveButton extends StatelessWidget {
             },
             child: Text(
               'buttonClearCancel'.tr,
-              style: const TextStyle(
-                color: darkGrey46,
+              style: TextStyle(
+                color: Theme.of(context).textTheme.bodyText1!.color!,
                 fontWeight: FontWeight.bold,
               ),
             ),
             style: TextButton.styleFrom(
-              primary: darkGrey46,
+              primary: Theme.of(context).textTheme.bodyText1!.color!,
             ),
           ),
         );
