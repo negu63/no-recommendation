@@ -10,8 +10,11 @@ import 'routes/pages.dart';
 import 'core/theme/app_theme.dart';
 import 'modules/home/page.dart';
 
+bool isDark = false;
+
 void main() async {
   await Hive.initFlutter().then((value) => _initSetting());
+  isDark = await loadFromHive('setting', 'isDark');
   runApp(const NoRecommendationApp());
 }
 
@@ -30,7 +33,7 @@ class NoRecommendationApp extends StatelessWidget {
       initialRoute: Routes.home,
       theme: appLightThemeData,
       darkTheme: appDarkThemeData,
-      themeMode: ThemeMode.light,
+      themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
       home: const SafeArea(
