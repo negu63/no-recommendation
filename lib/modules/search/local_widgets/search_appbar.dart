@@ -14,7 +14,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       title: const SearchInput(),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 }

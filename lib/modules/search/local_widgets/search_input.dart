@@ -21,16 +21,16 @@ class SearchInput extends StatelessWidget {
     return SizedBox(
       width: Get.width,
       child: TextField(
-        cursorColor: darkGrey18,
+        cursorColor: darkGrey46,
         controller: textEditingController,
         decoration: InputDecoration(
           prefixIcon: IconButton(
               onPressed: () {
                 Get.back();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back,
-                color: darkGrey18,
+                color: Theme.of(context).textTheme.bodyText1!.color!,
               )),
           suffixIcon: IconButton(
             onPressed: () {
@@ -42,9 +42,9 @@ class SearchInput extends StatelessWidget {
                 textEditingController.text = '';
               }
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.search,
-              color: darkGrey18,
+              color: Theme.of(context).textTheme.bodyText1!.color!,
             ),
           ),
           border: border,
@@ -55,7 +55,6 @@ class SearchInput extends StatelessWidget {
         onSubmitted: (value) {
           if (value.isNotEmpty) {
             searchInputController.query.value = value;
-            debugPrint(searchInputController.query.value);
             searchInputController.search(
                 replaceStringSpace(value), settingController.savingQuery.value);
             textEditingController.text = '';

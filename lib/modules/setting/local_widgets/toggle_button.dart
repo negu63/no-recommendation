@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 
 class ToggleButton extends StatelessWidget {
@@ -10,12 +9,14 @@ class ToggleButton extends StatelessWidget {
     required this.title,
     required this.name,
     required this.state,
+    this.onPressed,
   }) : super(key: key);
 
   final IconData icon;
   final String title;
   final String name;
   final RxBool state;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,9 @@ class ToggleButton extends StatelessWidget {
               () => Switch(
                 value: state.value,
                 onChanged: (value) {
+                  if (onPressed != null) {
+                    onPressed!();
+                  }
                   state.value = value;
                   saveToHive('setting', name, value);
                   if (!Get.isSnackbarOpen!) {
@@ -41,11 +45,12 @@ class ToggleButton extends StatelessWidget {
                         message: 'snackbarToggleMessage'.tr,
                         snackPosition: SnackPosition.BOTTOM,
                         duration: const Duration(seconds: 2),
+                        isDismissible: true,
                       ),
                     );
                   }
                 },
-                activeColor: darkGrey18,
+                activeColor: Theme.of(context).toggleableActiveColor,
               ),
             ),
           ),

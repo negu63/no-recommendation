@@ -5,6 +5,7 @@ import 'package:norecommendation/global_widgets/text_title.dart';
 import 'package:norecommendation/modules/home/local_widgets/search_input.dart';
 import 'package:norecommendation/modules/home/local_widgets/spotlight.dart';
 import 'package:norecommendation/modules/search/controller.dart';
+import 'package:norecommendation/modules/setting/controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,14 +13,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(SearchInputController());
+    final SettingController settingController = Get.find();
 
     return Scaffold(
-      backgroundColor: darkGrey18,
+      backgroundColor: darkGrey46,
       body: Stack(
         children: [
-          const Align(
-            alignment: Alignment.topCenter,
-            child: Spotlight(),
+          Obx(
+            () => Align(
+              alignment: Alignment.topCenter,
+              child: settingController.isDark.value
+                  ? Container()
+                  : const Spotlight(),
+            ),
           ),
           const Align(
             alignment: Alignment.center,

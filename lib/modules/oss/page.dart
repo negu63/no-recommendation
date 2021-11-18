@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:get/get.dart';
 
 class OssPage extends StatelessWidget {
@@ -10,15 +9,16 @@ class OssPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        appBarTheme: const AppBarTheme(
-          color: Colors.white,
-          foregroundColor: darkGrey18,
+        appBarTheme: AppBarTheme(
+          foregroundColor: Theme.of(context).textTheme.bodyText1!.color,
+          backgroundColor: Theme.of(context).canvasColor,
           shadowColor: Colors.transparent,
         ),
         colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: darkGrey18,
-              secondary: darkGrey18,
+              primary: Theme.of(context).textTheme.bodyText1!.color,
+              secondary: Theme.of(context).textTheme.bodyText1!.color,
             ),
+        cardColor: Theme.of(context).canvasColor,
       ),
       child: LicensePage(
         applicationName: 'appTitle'.tr,

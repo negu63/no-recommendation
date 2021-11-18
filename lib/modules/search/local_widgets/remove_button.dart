@@ -15,7 +15,7 @@ class RemoveButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(
         Icons.clear,
-        color: darkGrey18,
+        color: darkGrey46,
       ),
       onPressed: () {
         Get.defaultDialog(
@@ -39,12 +39,13 @@ class RemoveButton extends StatelessWidget {
                     message: 'snackbarClearMessage'.tr,
                     snackPosition: SnackPosition.BOTTOM,
                     duration: const Duration(seconds: 2),
+                    isDismissible: true,
                   ),
                 );
               }
             },
             style: TextButton.styleFrom(
-              primary: darkGrey18,
+              primary: darkGrey46,
             ),
             child: Text(
               'buttonClearConfirm'.tr,
@@ -61,12 +62,12 @@ class RemoveButton extends StatelessWidget {
             child: Text(
               'buttonClearCancel'.tr,
               style: const TextStyle(
-                color: darkGrey18,
+                color: darkGrey46,
                 fontWeight: FontWeight.bold,
               ),
             ),
             style: TextButton.styleFrom(
-              primary: darkGrey18,
+              primary: darkGrey46,
             ),
           ),
         );

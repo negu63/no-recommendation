@@ -19,7 +19,7 @@ class Menu extends StatelessWidget {
       onTap: onTap,
       leading: Icon(
         icon,
-        color: darkGrey18,
+        color: darkGrey46,
       ),
       title: Text(title),
     );

@@ -49,12 +49,13 @@ class FunctionButton extends StatelessWidget {
                             message: 'snackbarClearMessage'.tr,
                             snackPosition: SnackPosition.BOTTOM,
                             duration: const Duration(seconds: 2),
+                            isDismissible: true,
                           ),
                         );
                       }
                     },
                     style: TextButton.styleFrom(
-                      primary: darkGrey18,
+                      primary: darkGrey46,
                     ),
                     child: Text(
                       'buttonClearConfirm'.tr,
@@ -70,26 +71,26 @@ class FunctionButton extends StatelessWidget {
                     },
                     child: Text(
                       'buttonClearCancel'.tr,
-                      style: const TextStyle(
-                        color: darkGrey18,
+                      style: TextStyle(
+                        color: Theme.of(context).textTheme.bodyText1!.color!,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     style: TextButton.styleFrom(
-                      primary: darkGrey18,
+                      primary: darkGrey46,
                     ),
                   ),
                 );
               },
               child: Text(
                 label,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               style: TextButton.styleFrom(
-                backgroundColor: darkGrey18,
-                primary: Colors.white,
+                backgroundColor: Theme.of(context).textTheme.bodyText1!.color!,
+                primary: Theme.of(context).primaryColor,
               ),
             ),
           ),
