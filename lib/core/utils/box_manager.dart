@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 dynamic loadFromHive(String name, String key) async {
@@ -7,7 +6,6 @@ dynamic loadFromHive(String name, String key) async {
     box = Hive.box(name);
   } catch (error) {
     box = await Hive.openBox(name);
-    debugPrint(error.toString());
   }
 
   return box.get(key);
