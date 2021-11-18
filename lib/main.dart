@@ -28,7 +28,9 @@ class NoRecommendationApp extends StatelessWidget {
       fallbackLocale: const Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.home,
-      theme: appThemeData,
+      theme: appLightThemeData,
+      darkTheme: appDarkThemeData,
+      themeMode: ThemeMode.light,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
       home: const SafeArea(
@@ -39,9 +41,9 @@ class NoRecommendationApp extends StatelessWidget {
 }
 
 void _initSetting() async {
-  debugPrint((await Hive.boxExists('setting')).toString());
   if (!(await Hive.boxExists('setting'))) {
     saveToHive('setting', 'query', true);
     saveToHive('setting', 'comment', false);
+    saveToHive('setting', 'isDark', false);
   }
 }
