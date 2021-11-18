@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
@@ -19,8 +18,8 @@ class SettingPage extends StatelessWidget {
       appBar: SimpleAppbar(
         appbar: AppBar(),
         title: 'settingTitle'.tr,
-        iconColor: darkGrey18,
-        foreColor: darkGrey18,
+        iconColor: Theme.of(context).textTheme.bodyText1!.color!,
+        foreColor: Theme.of(context).textTheme.bodyText1!.color!,
         backgroundColor: Theme.of(context).canvasColor,
         shadowColor: Colors.transparent,
       ),
@@ -37,6 +36,20 @@ class SettingPage extends StatelessWidget {
             name: 'comment',
             state: settingController.showingComment,
           ),
+          ToggleButton(
+            icon: Icons.dark_mode,
+            title: 'settingDarkTheme'.tr,
+            name: 'isDark',
+            state: settingController.isDark,
+            onPressed: () {
+              debugPrint(settingController.isDark.value.toString());
+              Get.changeThemeMode(
+                !settingController.isDark.value
+                    ? ThemeMode.dark
+                    : ThemeMode.light,
+              );
+            },
+          ),
           SettingSubtitle(title: 'settingSubtitleHistory'.tr),
           ToggleButton(
             icon: Icons.search,
@@ -44,7 +57,6 @@ class SettingPage extends StatelessWidget {
             name: 'query',
             state: settingController.savingQuery,
           ),
-          const Divider(),
           SettingSubtitle(title: 'settingSubtitleDelete'.tr),
           FunctionButton(
             icon: Icons.search_off,
