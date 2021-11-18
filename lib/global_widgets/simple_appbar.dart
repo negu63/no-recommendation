@@ -27,7 +27,7 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         onPressed: () {
-          Get.back();
+          Get.back(closeOverlays: true);
         },
         icon: Icon(
           Icons.arrow_back,
