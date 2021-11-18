@@ -42,7 +42,6 @@ class SettingPage extends StatelessWidget {
             name: 'isDark',
             state: settingController.isDark,
             onPressed: () {
-              debugPrint(settingController.isDark.value.toString());
               Get.changeThemeMode(
                 !settingController.isDark.value
                     ? ThemeMode.dark
