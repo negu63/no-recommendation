@@ -15,6 +15,7 @@ class SettingPage extends StatelessWidget {
     final SettingController settingController = Get.find();
 
     return Scaffold(
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: SimpleAppbar(
         appbar: AppBar(),
         title: 'settingTitle'.tr,

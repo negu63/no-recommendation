@@ -8,6 +8,7 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: SearchAppBar(appbar: AppBar()),
       body: const SearchHistory(),
     );

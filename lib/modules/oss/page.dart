@@ -23,19 +23,19 @@ class OssPage extends StatelessWidget {
       child: LicensePage(
         applicationName: 'appTitle'.tr,
         applicationVersion: '1.0.0',
-        applicationIcon: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          margin: const EdgeInsets.all(8),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: SvgPicture.asset(
-              'assets/images/blinker_icon_1024.svg',
-              semanticsLabel: 'blinker logo',
-              clipBehavior: Clip.antiAlias,
-              width: 64,
-              height: 64,
+        applicationIcon: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: SvgPicture.asset(
+                'assets/images/blinker_icon_1024.svg',
+                semanticsLabel: 'blinker logo',
+                clipBehavior: Clip.antiAlias,
+                width: 64,
+                height: 64,
+              ),
             ),
           ),
         ),
