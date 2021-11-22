@@ -1,5 +1,4 @@
 class Routes {
-  // final SPLASH = '';
   static const home = '/';
   static const webSearch = '/web/search/';
   static const webWatch = '/web/watch/:videoId';
