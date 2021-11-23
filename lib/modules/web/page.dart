@@ -17,7 +17,7 @@ class WebPage extends StatelessWidget {
     final SearchInputController searchInputController = Get.find();
     final url = isSearch
         ? 'https://youtube.com/results?search_query=${searchInputController.query}'
-        : 'https://www.youtube.com/watch?v=${Get.parameters['videoId']}';
+        : 'https://m.youtube.com/feed/library';
 
     return Scaffold(
       body: Column(
