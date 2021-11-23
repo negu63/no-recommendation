@@ -46,6 +46,7 @@ class NoRecommendationApp extends StatelessWidget {
 void _initSetting() async {
   if (!(await Hive.boxExists('setting'))) {
     saveToHive('setting', 'query', true);
+    saveToHive('setting', 'tab', false);
     saveToHive('setting', 'comment', false);
     saveToHive('setting', 'isDark', false);
   }
