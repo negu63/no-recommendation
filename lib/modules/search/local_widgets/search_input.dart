@@ -21,7 +21,7 @@ class SearchInput extends StatelessWidget {
     return SizedBox(
       width: Get.width,
       child: TextField(
-        cursorColor: darkGrey46,
+        cursorColor: darkGrey30,
         controller: textEditingController,
         decoration: InputDecoration(
           prefixIcon: IconButton(

@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
     final SettingController settingController = Get.find();
 
     return Scaffold(
-      backgroundColor: darkGrey46,
+      backgroundColor: darkGrey30,
       body: Stack(
         children: [
           Obx(

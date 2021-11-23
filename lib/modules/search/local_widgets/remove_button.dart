@@ -45,7 +45,7 @@ class RemoveButton extends StatelessWidget {
               }
             },
             style: TextButton.styleFrom(
-              primary: darkGrey46,
+              primary: darkGrey30,
             ),
             child: Text(
               'buttonClearConfirm'.tr,
