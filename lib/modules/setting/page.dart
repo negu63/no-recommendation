@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
@@ -66,6 +67,21 @@ class SettingPage extends StatelessWidget {
               final SearchInputController searchInputController = Get.find();
               searchInputController.clearQuery();
             },
+          ),
+          Padding(
+            padding: const EdgeInsets.all(100.0),
+            child: TextButton(
+              onPressed: () {
+                Get.toNamed('/oss');
+              },
+              child: Text(
+                'settingSubtitleInfo'.tr,
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Theme.of(context).textTheme.bodyText1!.color!,
+                primary: Theme.of(context).primaryColor,
+              ),
+            ),
           ),
         ],
       ),
