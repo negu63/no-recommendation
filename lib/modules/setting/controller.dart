@@ -3,6 +3,7 @@ import 'package:norecommendation/core/utils/box_manager.dart';
 
 class SettingController extends GetxController {
   RxBool savingQuery = true.obs;
+  RxBool showingTab = true.obs;
   RxBool showingComment = true.obs;
   RxBool isDark = true.obs;
 
@@ -14,6 +15,7 @@ class SettingController extends GetxController {
 
   void loadSetting() async {
     savingQuery.value = await loadFromHive('setting', 'query');
+    showingTab.value = await loadFromHive('setting', 'tab');
     showingComment.value = await loadFromHive('setting', 'comment');
     isDark.value = await loadFromHive('setting', 'isDark');
   }
