@@ -35,6 +35,9 @@ class WebPage extends StatelessWidget {
                   },
                   onLoadStop: (controller, url) {
                     _injectCSS(controller, 'assets/css/remove_recommend.css');
+                    if (!settingController.showingTab.value) {
+                      _injectCSS(controller, 'assets/css/remove_tab.css');
+                    }
                     if (!settingController.showingComment.value) {
                       _injectCSS(controller, 'assets/css/remove_comment.css');
                     }
