@@ -20,7 +20,7 @@ class AppPages {
       ),
     ),
     GetPage(
-      name: Routes.webWatch,
+      name: Routes.webLibrary,
       page: () => const WebPage(
         isSearch: false,
       ),
