@@ -41,11 +41,11 @@ class HomePage extends StatelessWidget {
             top: 0,
             left: 4,
             child: IconButton(
-              icon: const Icon(Icons.info_outline),
+              icon: const Icon(Icons.settings),
               iconSize: 30,
               color: Colors.white,
               onPressed: () {
-                Get.toNamed('/oss');
+                Get.toNamed('/setting');
               },
             ),
           ),
@@ -53,11 +53,11 @@ class HomePage extends StatelessWidget {
             top: 0,
             right: 4,
             child: IconButton(
-              icon: const Icon(Icons.settings),
+              icon: const Icon(Icons.video_library_sharp),
               iconSize: 30,
               color: Colors.white,
               onPressed: () {
-                Get.toNamed('/setting');
+                Get.toNamed('/web/library');
               },
             ),
           ),
