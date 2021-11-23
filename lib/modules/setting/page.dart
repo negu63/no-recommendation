@@ -33,6 +33,12 @@ class SettingPage extends StatelessWidget {
             title: 'settingSubtitleDisplay'.tr,
           ),
           ToggleButton(
+            icon: Icons.explore,
+            title: 'settingTab'.tr,
+            name: 'tab',
+            state: settingController.showingTab,
+          ),
+          ToggleButton(
             icon: Icons.comment,
             title: 'settingCommentBox'.tr,
             name: 'comment',
