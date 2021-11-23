@@ -1,0 +1,3 @@
+#app > ytm-pivot-bar-renderer[role=tablist] > ytm-pivot-bar-item-renderer:nth-child(n+1):nth-child(-n+2) {
+    display: none;
+}
