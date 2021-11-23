@@ -22,6 +22,7 @@ class Messages extends Translations {
           'buttonClearCancel': 'Cacel',
           'snackbarClearTitle': 'Delete completed',
           'snackbarClearMessage': 'Has been deleted.',
+          'settingSubtitleInfo': 'License',
         },
         'ko_KR': {
           'appTitle': '블링커',
@@ -42,6 +43,7 @@ class Messages extends Translations {
           'buttonClearCancel': '취소',
           'snackbarClearTitle': '삭제 완료',
           'snackbarClearMessage': '삭제되었습니다.',
+          'settingSubtitleInfo': '라이센스',
         },
       };
 }
