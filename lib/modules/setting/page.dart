@@ -74,14 +74,15 @@ class SettingPage extends StatelessWidget {
               searchInputController.clearQuery();
             },
           ),
+          SettingSubtitle(title: 'settingSubtitleLicense'.tr),
           Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.fromLTRB(100, 0, 100, 0),
             child: TextButton(
               onPressed: () {
                 Get.toNamed('/oss');
               },
               child: Text(
-                'settingSubtitleInfo'.tr,
+                'settingSubtitleLicense'.tr,
               ),
               style: TextButton.styleFrom(
                 backgroundColor: Theme.of(context).textTheme.bodyText1!.color!,
