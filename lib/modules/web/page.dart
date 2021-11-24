@@ -20,9 +20,12 @@ class WebPage extends StatelessWidget {
         : 'https://m.youtube.com/feed/library';
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          Expanded(
+          SizedBox(
+            width: Get.width,
+            height: Get.height,
             child: SafeArea(
               child: WillPopScope(
                 onWillPop: _goBack,
