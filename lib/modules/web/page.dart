@@ -23,9 +23,7 @@ class WebPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          SizedBox(
-            width: Get.width,
-            height: Get.height,
+          Flexible(
             child: SafeArea(
               child: WillPopScope(
                 onWillPop: _goBack,
