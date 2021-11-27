@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/modules/search/controller.dart';
@@ -23,7 +24,7 @@ class WebPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          Flexible(
+          Expanded(
             child: SafeArea(
               child: WillPopScope(
                 onWillPop: _goBack,
@@ -42,6 +43,18 @@ class WebPage extends StatelessWidget {
                     if (!settingController.showingComment.value) {
                       _injectCSS(controller, 'assets/css/remove_comment.css');
                     }
+                  },
+                  onEnterFullscreen: (controller) {
+                    SystemChrome.setPreferredOrientations([
+                      DeviceOrientation.landscapeRight,
+                      DeviceOrientation.landscapeLeft,
+                    ]);
+                  },
+                  onExitFullscreen: (controller) {
+                    SystemChrome.setPreferredOrientations([
+                      DeviceOrientation.portraitUp,
+                      DeviceOrientation.portraitDown,
+                    ]);
                   },
                 ),
               ),
