@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:norecommendation/core/theme/color_theme.dart';
 import 'package:norecommendation/global_widgets/simple_appbar.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
