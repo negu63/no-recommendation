@@ -22,7 +22,7 @@ class OssPage extends StatelessWidget {
       ),
       child: LicensePage(
         applicationName: 'appTitle'.tr,
-        applicationVersion: '1.0.0',
+        applicationVersion: '1.1.0+4',
         applicationIcon: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Card(
