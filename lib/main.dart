@@ -15,7 +15,7 @@ bool isDark = false;
 
 void main() async {
   await Hive.initFlutter().then((value) => _initSettings());
-  isDark = await loadFromHive('setting', 'isDark');
+  isDark = await loadFromHive('setting', 'isDark') ?? false;
   runApp(const NoRecommendationApp());
 }
 
