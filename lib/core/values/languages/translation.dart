@@ -6,9 +6,11 @@ class Messages extends Translations {
         'en_US': {
           'appTitle': 'Blinker',
           'settingTitle': 'Setting',
+          'settingSubtitlePlay': 'Play',
           'settingSubtitleDisplay': 'Display',
           'settingSubtitleHistory': 'History',
           'settingSubtitleDelete': 'Delete',
+          'settingBackgroundPlay': 'Background play',
           'settingTab': 'Bottom button (home & explore)',
           'settingCommentBox': 'Comment box',
           'settingDarkTheme': 'Dark mode',
@@ -28,9 +30,11 @@ class Messages extends Translations {
         'ko_KR': {
           'appTitle': '블링커',
           'settingTitle': '설정',
+          'settingSubtitlePlay': '재생',
           'settingSubtitleDisplay': '화면',
           'settingSubtitleHistory': '기록',
           'settingSubtitleDelete': '삭제',
+          'settingBackgroundPlay': '백그라운드 재생',
           'settingTab': '하단 버튼 (홈 & 탐색)',
           'settingCommentBox': '댓글 창',
           'settingDarkTheme': '다크 모드',
