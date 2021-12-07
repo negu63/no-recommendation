@@ -6,6 +6,7 @@ class SettingController extends GetxController {
   RxBool showingTab = true.obs;
   RxBool showingComment = true.obs;
   RxBool isDark = true.obs;
+  RxBool backgroundPlay = false.obs;
 
   @override
   void onInit() async {
@@ -18,5 +19,6 @@ class SettingController extends GetxController {
     showingTab.value = await loadFromHive('setting', 'tab');
     showingComment.value = await loadFromHive('setting', 'comment');
     isDark.value = await loadFromHive('setting', 'isDark');
+    backgroundPlay.value = await loadFromHive('setting', 'backgroundPlay');
   }
 }
