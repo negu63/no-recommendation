@@ -29,6 +29,15 @@ class SettingPage extends StatelessWidget {
         shrinkWrap: true,
         children: [
           SettingSubtitle(
+            title: 'settingSubtitlePlay'.tr,
+          ),
+          ToggleButton(
+            icon: Icons.play_arrow,
+            title: 'settingBackgroundPlay'.tr,
+            name: 'backgroundPlay',
+            state: settingController.backgroundPlay,
+          ),
+          SettingSubtitle(
             title: 'settingSubtitleDisplay'.tr,
           ),
           ToggleButton(
