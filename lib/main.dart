@@ -14,7 +14,7 @@ import 'modules/home/page.dart';
 bool isDark = false;
 
 void main() async {
-  await Hive.initFlutter().then((value) => _initSetting());
+  await Hive.initFlutter().then((value) => _initSettings());
   isDark = await loadFromHive('setting', 'isDark');
   runApp(const NoRecommendationApp());
 }
@@ -28,6 +28,7 @@ class NoRecommendationApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
     Get.put(SettingController());
 
     return GetMaterialApp(
@@ -48,11 +49,16 @@ class NoRecommendationApp extends StatelessWidget {
   }
 }
 
-void _initSetting() async {
-  if (!(await Hive.boxExists('setting'))) {
-    saveToHive('setting', 'query', true);
-    saveToHive('setting', 'tab', false);
-    saveToHive('setting', 'comment', false);
-    saveToHive('setting', 'isDark', false);
+void _initSettings() async {
+  _initSetting('setting', 'query', true);
+  _initSetting('setting', 'tab', false);
+  _initSetting('setting', 'comment', false);
+  _initSetting('setting', 'isDark', false);
+  _initSetting('setting', 'backgroundPlay', false);
+}
+
+void _initSetting(String name, String key, dynamic value) async {
+  if ((await loadFromHive(name, key)) == null) {
+    saveToHive(name, key, value);
   }
 }
