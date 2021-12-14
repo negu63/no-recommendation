@@ -5,6 +5,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:norecommendation/core/utils/box_manager.dart';
 import 'package:norecommendation/modules/search/controller.dart';
 import 'package:norecommendation/modules/setting/controller.dart';
+import 'package:wakelock/wakelock.dart';
 
 late InAppWebViewController inAppWebViewController;
 late bool backgroundPlay;
@@ -36,12 +37,19 @@ class _WebPageState extends State<WebPage> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.inactive && !backgroundPlay) {
-      inAppWebViewController.evaluateJavascript(
-        source:
-            '''var button = document.querySelector('button.icon-button[aria-pressed="false"]');
+    if (state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.paused) {
+      Wakelock.enable();
+
+      if (!backgroundPlay) {
+        inAppWebViewController.evaluateJavascript(
+          source:
+              '''var button = document.querySelector('button.icon-button[aria-pressed="false"]');
             if(button !== null) { button.click(); };''',
-      );
+        );
+      }
+    } else if (state == AppLifecycleState.resumed) {
+      Wakelock.disable();
     }
   }
 
